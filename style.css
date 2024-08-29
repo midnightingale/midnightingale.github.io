@@ -1,0 +1,22 @@
+body
+{
+  margin: 0;
+}
+
+.menu-stamp-container
+{
+  padding: 25vh 0;
+  width: 75%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 12px;
+  justify-items: center;
+  align-items: center;
+}
+
+.menu-stamp
+{
+  width: fit-content;
+}
