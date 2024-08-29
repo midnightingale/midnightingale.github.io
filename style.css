@@ -5,8 +5,8 @@ body
 
 .menu-stamp-container
 {
-  padding: 25vh 0;
-  width: 75%;
+  padding: 15vh 0;
+  width: 80vw;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,5 +18,15 @@ body
 
 .menu-stamp
 {
-  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.menu-stamp img
+{
+  width: 20vw;
+  height: auto;
 }
