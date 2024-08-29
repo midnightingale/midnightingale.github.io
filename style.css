@@ -7,6 +7,15 @@ body
 {
   margin: 0;
   font-family: 'sophie', "Times New Roman", serif;
+  height: 100vh;
+}
+
+.vertically-center-content
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .paper-bg
@@ -18,15 +27,6 @@ body
   height: 100%;
   object-fit: cover;
   z-index: -1;
-}
-
-.vertically-center-content
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .menu-stamp-container
