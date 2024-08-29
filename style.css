@@ -3,17 +3,27 @@ body
   margin: 0;
 }
 
+.vertically-center-content
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .menu-stamp-container
 {
-  padding: 15vh 0;
   width: 80vw;
+  height: 90vh;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-auto-rows: max-content;
   grid-gap: 12px;
   justify-items: center;
   align-items: center;
+  height: fit-content;
 }
 
 .menu-stamp
@@ -27,6 +37,6 @@ body
 
 .menu-stamp img
 {
-  width: 20vw;
+  width: min(20vw, 150px);
   height: auto;
 }
