@@ -3,6 +3,14 @@ body
   margin: 0;
 }
 
+.paper-bg
+{
+  background-color: #c9aa90;
+  background-image: url('https://ik.imagekit.io/gale/paper-bg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .vertically-center-content
 {
   display: flex;
@@ -33,10 +41,19 @@ body
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  color: black;
 }
 
 .menu-stamp img
 {
   width: min(20vw, 150px);
   height: auto;
+  padding: 4px;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.menu-stamp img:hover
+{
+  rotate: 5deg;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5));
 }
