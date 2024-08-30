@@ -3,11 +3,21 @@
   src: url("Sophie-Regular.otf") format("opentype");
 }
 
-body
+*
 {
-  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+.sophie-font
+{
   font-family: 'sophie', "Times New Roman", serif;
-  height: 100vh;
 }
 
 .vertically-center-content
@@ -31,8 +41,7 @@ body
 
 .menu-stamp-container
 {
-  width: 80vw;
-  height: 90vh;
+  max-width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -40,7 +49,6 @@ body
   grid-gap: 12px;
   justify-items: center;
   align-items: center;
-  height: fit-content;
 }
 
 .menu-stamp
@@ -51,13 +59,13 @@ body
   justify-content: center;
   text-decoration: none;
   color: black;
-  font-size: 2rem;
+  font-size: min(2rem, 10vw);
 }
 
 .menu-stamp img
 {
-  width: min(20vw, 150px);
-  height: auto;
+  max-height: 25vh;
+  max-width: 30vw;
   padding: 4px;
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
 }
