@@ -1,0 +1,32 @@
+.gallery-hall
+{
+  background-color: aquamarine;
+  display: grid;
+  grid-template-rows: 88% 12%;
+  height: 100%;
+}
+
+.floor
+{
+  background-image: url(https://ik.imagekit.io/gale/floor);
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: 600px 100%;
+  /* transform: rotateX(40deg); */
+  /*  transform: translateY(128px) translateZ(-1px); */
+    /* perspective-origin: 50% 70%; */
+}
+
+.wall
+{
+  background-color: whitesmoke;
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.wall .artwork
+{
+  max-height: 75vh;
+  margin: 0 10vw;
+}

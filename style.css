@@ -1,33 +1,3 @@
-@font-face {
-  font-family: "sophie";
-  src: url("Sophie-Regular.otf") format("opentype");
-}
-
-*
-{
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0; 
-  padding: 0; 
-}
-
-.sophie-font
-{
-  font-family: 'sophie', "Times New Roman", serif;
-}
-
-.vertically-center-content
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .paper-bg
 {
   background: rgb(190, 165, 144);
@@ -47,16 +17,14 @@ html, body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: max-content;
   grid-gap: 12px;
-  justify-items: center;
-  align-items: center;
+  place-items: center;
 }
 
 .menu-stamp
 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
   text-decoration: none;
   color: black;
   font-size: min(2rem, 10vw);
