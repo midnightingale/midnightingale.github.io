@@ -1,6 +1,10 @@
+html {
+  overscroll-behavior: none;
+  overflow-y: hidden;
+}
+
 .gallery-hall
 {
-  background-color: aquamarine;
   display: grid;
   grid-template-rows: 88% 12%;
   height: 100%;
@@ -11,15 +15,29 @@
   background-image: url(https://ik.imagekit.io/gale/floor);
   background-position: center;
   background-repeat: repeat-x;
-  background-size: 600px 100%;
-  /* transform: rotateX(40deg); */
-  /*  transform: translateY(128px) translateZ(-1px); */
-    /* perspective-origin: 50% 70%; */
+  background-size: 700px 100%;
+
+  /* baseboards */
+  border-top: solid 5px #8D6D42;
+  box-shadow: 0 -4px #D9C3AA;
 }
+
+.floor:after { /* add gradient to floor */
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffffff55, #D1A99155);
+}
+
+/* .floor::after {
+  background-image: linear-gradient(to bottom, #FFFFFF, #D1A991);
+
+} */
 
 .wall
 {
-  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom, #D3CBBE, #F5F2ED);
   display: grid;
   grid-auto-flow: column;
   place-items: center;
@@ -27,6 +45,55 @@
 
 .wall .artwork
 {
-  max-height: 75vh;
-  margin: 0 10vw;
+  height: 70vh;
+  max-height: 70vh; 
+  margin: 0 15vw;
+  -webkit-box-reflect: below 13vh linear-gradient(transparent, #00000012);
+  box-shadow: 
+    0 2px 3px 0px #00000045,       /* form shadow */
+    -1px 9px 3px 2px #00000030,    /* cast shadow */
+    0px -7px 100px 25px #ffffffaf; /* spotlight */
 }
+
+.wall .tall
+{
+  height: 70vh;
+  max-height: 70vh;
+  -webkit-box-reflect: below 16vh linear-gradient(transparent, #00000012);
+}
+
+.wall .less-tall
+{
+  height: 50vh;
+  max-height: 50vh; 
+  -webkit-box-reflect: below 34vh linear-gradient(transparent, #00000012);
+}
+
+.wall .taller
+{
+  height: 75vh;
+  max-height: 75vh;
+  -webkit-box-reflect: below 10.5vh linear-gradient(transparent, #00000012);
+}
+
+.frame
+{
+  border-image: url(https://ik.imagekit.io/gale/gallery-frames/wood-frame.png) 179 164 163 194 stretch stretch;
+  border-color: #cfbab0;
+  border-style: solid;
+  border-width: 20px;
+  display: block;
+}
+
+/* or add inset shadow */
+
+/* separate inset shadow because they don't work on img elements */
+/* .wall .artwork:before
+{
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0 2px 0px #00000036;
+  pointer-events: none;
+} */
