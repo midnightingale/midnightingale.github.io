@@ -140,7 +140,7 @@ img.framed
 .door:before
 {
   content: "main hall";
-  /* place exit text above the door */
+  /* door text placed above the door */
   position: absolute;
   top: -36px;
   left: 50%;

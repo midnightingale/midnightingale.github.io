@@ -1,11 +1,12 @@
 html
 {
   overflow-y: hidden;
+  overscroll-behavior-y: none;
 }
 
 body 
 {
-  background-image: url(https://images.unsplash.com/photo-1519972064555-542444e71b54);
+  background-image: url(https://ik.imagekit.io/gale/paper-bg.jpg?updatedAt=1727196071135);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,7 +30,20 @@ body
   place-items: center;
   text-decoration: none;
   color: black;
-  font-size: min(2rem, 10vw);
+}
+
+.sophie-font
+{
+  font-family: 'sophie', "Times New Roman", serif;
+  font-size: 2rem;
+}
+
+@media (max-width: 480px) 
+{ 
+  .sophie-font
+  {
+    font-size: 1.2rem;
+  }
 }
 
 .menu-stamp img
