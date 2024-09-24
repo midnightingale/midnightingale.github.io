@@ -1,7 +1,12 @@
+:root {
+  --wall-height: 88vh;
+  --floor-height: 12vh;
+}
+
 .gallery-hall
 {
   display: grid;
-  grid-template-rows: 88% 12%;
+  grid-template-rows: var(--wall-height) var(--floor-height);
   height: 100%;
   overflow-y: hidden;
   overscroll-behavior-y: none;
@@ -76,7 +81,7 @@ img.tall
 {
   height: 70vh;
   max-height: 70vh;
-  -webkit-box-reflect: below 16vh linear-gradient(transparent, #00000012);
+  -webkit-box-reflect: below calc((var(--wall-height)-70vh)/2) linear-gradient(transparent, #00000012);
 }
 
 img.less-tall
@@ -115,4 +120,39 @@ img.framed
 
 .painting-label .p span {
   font-weight: 700;
+}
+
+.door
+{
+  height: 62vh;
+  width: 28vh;
+  margin: 0 150px;
+  border-radius: 2px;
+  position: relative;
+  bottom: -13.3vh;
+  background-image: linear-gradient(to bottom, #282828, #665c4d);
+  border-style: inset;
+  border-top: solid 2px #ffffff78;
+  border-left: solid 2px #ffffff78;
+  border-right: solid 2px #ffffff78;
+}
+
+.door:before
+{
+  content: "main hall";
+  /* place exit text above the door */
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: #897b6b;
+}
+
+.door a 
+{
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
 }
