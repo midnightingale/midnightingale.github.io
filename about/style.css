@@ -1,9 +1,11 @@
 body 
 {
-  background-image: url(https://ik.imagekit.io/gale/paper-bg.jpg?updatedAt=1727196071135);
+  background-image: url(https://ik.imagekit.io/gale/about/wood-bg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* to make items look better on background */
+  filter: brightness(0.9);
 }
 
 p
@@ -22,7 +24,7 @@ margin: 0;
 .about img
 {
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: all 0.5s ease;
+  transition: all 0.2s cubic-bezier(0, 1.02, 0.79, 1.01);
 }
 
 .about img:hover
@@ -32,38 +34,11 @@ margin: 0;
   scale: 1.1;
 }
 
-/*  animate the image hover */
-
-
-.love-letter-container
-{
-  position: absolute;
-  top: 15vh;
-  left: 10vh;
-  rotate: 3deg;
-  z-index: 1;
-}
-
-.love-letter
-{
-  height: 10vh;
-  width: auto;
-}
-
-.love-letter-text
-{
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  font-size: 2vh;
-  color:rgba(105, 69, 56, 0.778);
-}
-
 .postcard-container
 {
   position: relative;
-  top: 20vh;
-  left: 20vh;
+  top: 15vh;
+  left: 15vh;
   width: fit-content;
   height: fit-content;
   rotate: -4deg;
@@ -85,6 +60,21 @@ margin: 0;
   font-size: 3.2vh;
 }
 
+.douglas-fir
+{
+  position: absolute;
+  top: 54vh;
+  left: 35vh;
+  rotate: -6deg;
+  height: 40vh;
+  width: auto;
+}
+
+.douglas-fir:hover
+{
+  rotate: -2deg;
+}
+
 .library-card
 {
   position: relative;
@@ -94,4 +84,58 @@ margin: 0;
   height: 60vh;
   width: auto;
   border-radius: 3px;
+}
+
+.snoopy-comic
+{
+  position: relative;
+  top: 20vh;
+  left: 15vh;
+  rotate: -3deg;
+  height: 18vh;
+  width: auto;
+  border-radius: 3px;
+}
+
+.swatch
+{
+  position: absolute;
+  height: 20vh;
+  width: auto;
+  border-radius: 2px;
+}
+
+.swatch.klein-blue
+{
+  rotate: -4deg;
+  top: 48vh;
+  left: 140vh;
+}
+
+.swatch.lavender
+{
+  rotate: 3deg;
+  top: 60vh;
+  left: 150vh;
+}
+
+.swatch.chartreuse
+{
+  rotate: -1deg;
+  top: 52vh;
+  left: 160vh;
+}
+
+.polaroid
+{
+  position: relative;
+  height: 46vh;
+  width: auto;
+}
+
+.polaroid.a
+{
+  top: 46vh;
+  left: -13vh;
+  rotate: 13deg;
 }
