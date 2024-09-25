@@ -1,0 +1,97 @@
+body 
+{
+  background-image: url(https://ik.imagekit.io/gale/paper-bg.jpg?updatedAt=1727196071135);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p
+{
+margin: 0;
+}
+
+.about
+{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.about img
+{
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: all 0.5s ease;
+}
+
+.about img:hover
+{
+  rotate: 0deg;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.4));
+  scale: 1.1;
+}
+
+/*  animate the image hover */
+
+
+.love-letter-container
+{
+  position: absolute;
+  top: 15vh;
+  left: 10vh;
+  rotate: 3deg;
+  z-index: 1;
+}
+
+.love-letter
+{
+  height: 10vh;
+  width: auto;
+}
+
+.love-letter-text
+{
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  font-size: 2vh;
+  color:rgba(105, 69, 56, 0.778);
+}
+
+.postcard-container
+{
+  position: relative;
+  top: 20vh;
+  left: 20vh;
+  width: fit-content;
+  height: fit-content;
+  rotate: -4deg;
+}
+
+.postcard
+{
+  height: 60vh;
+  width: auto;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.postcard-text {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  width: 38%;
+  font-size: 3.2vh;
+}
+
+.library-card
+{
+  position: relative;
+  top: 30vh;
+  left: 10vh;
+  rotate: 4deg;
+  height: 60vh;
+  width: auto;
+  border-radius: 3px;
+}

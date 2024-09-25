@@ -59,3 +59,15 @@ body
   rotate: 5deg;
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.5));
 }
+
+.under-construction 
+{
+  color: #371a10b5;
+  cursor: help;
+}
+
+.under-construction img:hover
+{
+  rotate: 0deg;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+}
