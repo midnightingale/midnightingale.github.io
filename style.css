@@ -6,7 +6,8 @@ html
 
 body 
 {
-  background-image: url(https://ik.imagekit.io/gale/paper-bg?updatedAt=1727236765810);
+  background-color: #CC9F78;
+  background-image: url(https://ik.imagekit.io/gale/brown-paper);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

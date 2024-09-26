@@ -1,16 +1,36 @@
 body 
 {
-  background-image: url(https://ik.imagekit.io/gale/about/wood-bg);
+  background-color: #EFE1C4;
+  background-image: url(https://ik.imagekit.io/gale/green-mountain?updatedAt=1727386607415);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* to make items look better on background */
-  filter: brightness(0.9);
 }
 
 p
 {
 margin: 0;
+}
+
+.backmark
+{
+  z-index: 10;
+  position: absolute;
+  top: -4vh;
+  left: 0;
+  filter: drop-shadow(1px 4px 2px rgba(0, 0, 0, 0.5));
+  transition: all 0.2s ease;
+}
+
+.backmark img
+{
+  height: 20vh;
+  width: auto;
+}
+
+.backmark:hover
+{
+  translate: 0px 1.5vh;
 }
 
 .about
@@ -23,21 +43,21 @@ margin: 0;
 
 .about img
 {
-  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: all 0.2s cubic-bezier(0, 1.02, 0.79, 1.01);
+  filter: drop-shadow(1px 4px 2px rgba(0, 0, 0, 0.5));
+  transition: all 5s cubic-bezier(0, 1, 0.79, 1);
 }
 
 .about img:hover
 {
   rotate: 0deg;
-  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(1px 4px 2px rgba(0, 0, 0, 0.6));
   scale: 1.1;
 }
 
 .postcard-container
 {
   position: relative;
-  top: 15vh;
+  top: 10vh;
   left: 15vh;
   width: fit-content;
   height: fit-content;
@@ -63,7 +83,7 @@ margin: 0;
 .douglas-fir
 {
   position: absolute;
-  top: 54vh;
+  top: 50vh;
   left: 35vh;
   rotate: -6deg;
   height: 40vh;
@@ -78,7 +98,7 @@ margin: 0;
 .library-card
 {
   position: relative;
-  top: 30vh;
+  top: 25vh;
   left: 10vh;
   rotate: 4deg;
   height: 60vh;
@@ -89,7 +109,7 @@ margin: 0;
 .snoopy-comic
 {
   position: relative;
-  top: 20vh;
+  top: 15vh;
   left: 15vh;
   rotate: -3deg;
   height: 18vh;
@@ -108,21 +128,21 @@ margin: 0;
 .swatch.klein-blue
 {
   rotate: -4deg;
-  top: 48vh;
+  top: 42vh;
   left: 140vh;
 }
 
 .swatch.lavender
 {
   rotate: 3deg;
-  top: 60vh;
+  top: 55vh;
   left: 150vh;
 }
 
 .swatch.chartreuse
 {
   rotate: -1deg;
-  top: 52vh;
+  top: 47vh;
   left: 160vh;
 }
 
@@ -135,7 +155,7 @@ margin: 0;
 
 .polaroid.a
 {
-  top: 46vh;
+  top: 40vh;
   left: -13vh;
   rotate: 13deg;
 }

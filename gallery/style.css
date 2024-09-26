@@ -7,9 +7,6 @@
 {
   display: grid;
   grid-template-rows: var(--wall-height) var(--floor-height);
-  height: 100%;
-  overflow-y: hidden;
-  overscroll-behavior-y: none;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -47,15 +44,15 @@
 
 .intro-text
 {
-  font-size: 1.5rem;
-  width: min(70vw, 600px);
+  font-size: 1.2rem;
+  width: min(60vw, 450px);
   margin: 0 15vw;
   color: #371a10b5;
 }
 
 .intro-text h1
 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -75,20 +72,21 @@ img.artwork
     0 2px 3px 0px #00000045,       /* form shadow */
     -1px 9px 3px 2px #00000030,    /* cast shadow */
     0px -7px 100px 25px #ffffffaf; /* spotlight */
-}
+
+  }
 
 img.tall
 {
   height: 70vh;
   max-height: 70vh;
-  -webkit-box-reflect: below calc((var(--wall-height)-70vh)/2) linear-gradient(transparent, #00000012);
+  -webkit-box-reflect: below 15vh linear-gradient(transparent, #00000012);
 }
 
 img.less-tall
 {
   height: 50vh;
   max-height: 50vh; 
-  -webkit-box-reflect: below 34vh linear-gradient(transparent, #00000012);
+  -webkit-box-reflect: below 25vh linear-gradient(transparent, #00000012);
 }
 
 img.taller
@@ -104,7 +102,6 @@ img.framed
   border-color: #cfbab0;
   border-style: solid;
   border-width: 16px;
-  display: block;
 }
 
 .painting-label .h2 {
@@ -126,7 +123,7 @@ img.framed
 {
   height: 62vh;
   width: 28vh;
-  margin: 0 150px;
+  margin: 0 120px;
   border-radius: 2px;
   position: relative;
   bottom: -13.3vh;
@@ -137,7 +134,7 @@ img.framed
   border-right: solid 2px #ffffff78;
 }
 
-.door:before
+.door.main-hall:before
 {
   content: "main hall";
   /* door text placed above the door */
