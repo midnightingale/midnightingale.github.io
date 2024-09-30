@@ -14,3 +14,12 @@ container.addEventListener("wheel", function(e) {
     document.getElementById("gallery").scrollLeft += e.deltaY;
   }
 });
+
+function scrollIntoGallery()
+{
+  const target = document.getElementsByClassName('artwork')[0];
+  target.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start' // aligns to the top of the view
+  });
+}
