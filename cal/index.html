@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="fill-parent">
+<head>
+  <meta charset="UTF-8">
+  <title>sophie dot cal</title>
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
+  <link rel="stylesheet" href="./global/style.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="f73d01ad-8098-4f00-bd4d-6cbe090d718d"></script>
+</head>
+<body class="calendar-parent fill-parent">
+  <!-- Cal.com inline embed code-->
+    <div style="width:80%; height:30%; overflow:scroll" id="my-cal-inline" class="cal-embed"></div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "hi", {origin:"https://cal.com"});
+
+      Cal.ns.hi("inline", {
+        elementOrSelector:"#my-cal-inline",
+        config: {"layout":"month_view","theme":"light"},
+        calLink: "midnightingale/hi",
+      });
+
+      Cal.ns.hi("ui", {"theme":"light","styles":{"branding":{"brandColor":"#d9abab"}},"hideEventTypeDetails":true,"layout":"month_view"});
+    </script>
+  <!-- Cal.com inline embed code ends -->
+   <img alt="pencils" class="pencils" src="https://ik.imagekit.io/gale/pencils">
+</body>
+</html>

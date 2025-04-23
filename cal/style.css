@@ -1,0 +1,30 @@
+.calendar-parent
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0;
+  background-color: beige;
+  background-image: url(https://ik.imagekit.io/gale/white-paper-bg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.cal-embed
+{
+  border-radius: 12px;
+  color: #d9abab !important;
+}
+
+.pencils
+{
+  position: relative;
+  top: 0;
+  left: 0;
+}
