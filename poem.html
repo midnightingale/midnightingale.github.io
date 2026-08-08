@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-out of my __<head>,
+out of the __<head>,
 </head>
 into the __<body>
 
+<br><br>
   in the __<span></span>
   <br>
   of four months, <br>
@@ -11,7 +12,6 @@ into the __<body>
   it's funny how being needed can __<tr>ans</tr>
   __<form> the way you feel in the morning
   </form>
-  <!-- like together you are __<tr>ying to raise a child</tr> -->
   <br>
   <li>__ving </li> in this part of the __<map>,</map>
   <br>
@@ -20,16 +20,53 @@ into the __<body>
   I pick up a bag of <li>__zhis</li>
   __<th></th>at begins to mold before it enters my fridge
   <br>
-  but my stack of <canvas></canvas>___es stays pristine, <li>__ly-white</li> <br><br>
+  but my stack of <br>
+  <canvas id="paint"></canvas>es stays pristine, <li>__ly-white</li> <br><br>
 
 
-  everyone here is trying to make <progress></progress>
+  everyone here is obsessed with <progress></progress>
   <br>
   <figure> __ing out</figure>
-  how to leave t<mark></mark> <br>
+  how to leave a <mark>__</mark> on the world <br>
   
-  i want to be more than a __<form></form> <br>
-  more than <input />s and <output></output>__s
+  i want to exist outside of <input />s and <output></output>__s
+  <br>
+  a <dialog></dialog>__  with the universe <br>
+  a __<form> beyond ___<form>s</form></form>
 
+  <script>
+        const canvas = document.getElementById('paint');
+        const ctx = canvas.getContext('2d');
+
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Line styles
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        function draw(e) {
+            if (!isDrawing) return;
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseleave', () => isDrawing = false);
+    </script>
 
 </body>
