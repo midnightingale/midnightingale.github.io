@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Tangrandeur";
+  src: url("../../global/TANGRANDEUR.otf") format("opentype");
+}
+
+:root {
+  --text-color: #EFE7E0;
+  --text-glow:
+    0 0 10px rgba(239, 231, 224, 0.8),
+    0 0 30px rgba(239, 231, 224, 0.6),
+    0 0 60px rgba(239, 231, 224, 0.4),
+    0 2px 80px rgba(255, 245, 235, 0.5);
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.page-border {
+  position: fixed;
+  inset: 0;
+  border: 12px solid #F8EFE5;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255, 140, 120, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(255, 180, 150, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(200, 180, 220, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, transparent 50%, rgba(80, 81, 114, 0.334) 100%),
+    linear-gradient(180deg,
+      hsl(280, 40%, 80%) 0%,
+      hsl(300, 30%, 85%) 30%,
+      hsl(30, 50%, 88%) 60%,
+      hsl(280, 35%, 82%) 100%
+    );
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0.8;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+.grain ~ .grain {
+  /* Override for other grain layer */
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* Header content */
+.header-content {
+  position: fixed;
+  top: 2.5rem;
+  left: 2.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  /* default text in header */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.header-content * {
+  margin: 0;
+}
+
+.title {
+  font-family: "Tangrandeur", serif;
+  font-size: 4rem;
+  font-weight: normal;
+  line-height: 7.4rem;
+  margin: 1.2rem 0 0 0;
+  text-shadow: var(--text-glow);
+}
+
+/* Canvas container for blobs */
+.blob-canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#blobCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Legend - bottom left */
+.legend {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-style: oblique;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.legend-item:hover,
+.legend-item.hover {
+  transform: translateX(5px);
+}
+
+/* Pill-shaped legend dots */
+.legend-dot {
+  width: 32px;
+  height: 14px;
+  border-radius: 7px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.legend-item:hover .legend-dot,
+.legend-item.hover .legend-dot {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px currentColor;
+}
+
+.dot-daydream { background: hsl(260, 30%, 80%); }
+.dot-strangers { background: hsl(250, 40%, 75%); }
+.dot-sunsets { background: hsl(350, 70%, 80%); }
+.dot-portraits { background: hsl(25, 80%, 80%); }
+.dot-sketches { background: hsl(50, 80%, 85%); }
+
+/* Page transition overlay */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#transitionCanvas {
+  width: 100%;
+  height: 100%;
+}

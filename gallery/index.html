@@ -5,20 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sophie's gallery</title>
   <link rel="stylesheet" href="../global/style.css">
+  <link rel="stylesheet" href="styles/map.css">
+  <script defer data-tag="gallery" src="https://cloud.umami.is/script.js" data-website-id="f73d01ad-8098-4f00-bd4d-6cbe090d718d"></script>
 </head>
 <body>
-  <main>
-    <h1>sophie's gallery</h1>
-    <nav aria-label="gallery halls">
-      <ul>
-        <li><a href="halls/daydream.html">daydream</a></li>
-        <li><a href="halls/strangers.html">strangers</a></li>
-        <li><a href="halls/sunsets.html">sunsets</a></li>
-        <li><a href="halls/portraits.html">portraits</a></li>
-        <li><a href="halls/studies.html">studies</a></li>
-      </ul>
-    </nav>
-    <p><a href="../index.html">back home</a></p>
-  </main>
+  <div class="page-border"></div>
+  <div class="bg-gradient"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="grain"></div>
+
+  <div class="header-content">
+    <p class="welcome">welcome to the</p>
+    <h1 class="title">galleria</h1>
+    <p class="tagline">treats for the heart<br>the eyes and the mind</p>
+    <p class="updated">newest exhibit jan 2026</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item" data-room="daydream">
+      <span class="legend-dot dot-daydream"></span>
+      <span>daydream</span>
+    </div>
+
+    <div class="legend-item" data-room="strangers">
+      <span class="legend-dot dot-strangers"></span>
+      <span>strangers</span>
+    </div>
+
+    <div class="legend-item" data-room="sunsets">
+      <span class="legend-dot dot-sunsets"></span>
+      <span>sunsets</span>
+    </div>
+
+    <div class="legend-item" data-room="portraits">
+      <span class="legend-dot dot-portraits"></span>
+      <span>portraits</span>
+    </div>
+
+    <div class="legend-item" data-room="sketches">
+      <span class="legend-dot dot-sketches"></span>
+      <span>sketches</span>
+    </div>
+  </div>
+
+  <div class="transition-overlay">
+    <canvas id="transitionCanvas"></canvas>
+  </div>
+
+  <div class="blob-canvas-container">
+    <canvas id="blobCanvas"></canvas>
+  </div>
+
+  <script src="scripts/map.js"></script>
 </body>
 </html>

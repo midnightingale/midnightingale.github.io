@@ -42,6 +42,11 @@
   place-items: center;
 }
 
+.wall.dark
+{
+  background-image: linear-gradient(to bottom, #62605d, #6b675f);
+}
+
 .intro-text
 {
   font-size: 1.2rem;
