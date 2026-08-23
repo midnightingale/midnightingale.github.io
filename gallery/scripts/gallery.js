@@ -15,6 +15,8 @@ container.addEventListener("wheel", function(e) {
   }
 });
 
+// sometimes people click the arrow in the intro text
+// this runs when that happens
 function scrollIntoGallery()
 {
   const target = document.getElementsByClassName('artwork')[0];

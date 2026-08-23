@@ -77,8 +77,7 @@ img.artwork
     0 2px 3px 0px #00000045,       /* form shadow */
     -1px 9px 3px 2px #00000030,    /* cast shadow */
     0px -7px 100px 25px #ffffffaf; /* spotlight */
-
-  }
+}
 
 img.tall
 {
