@@ -1,56 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-transition-entering">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport">
+  <meta name="theme-color" content="#000000">
+  <style>html { background: #000; }</style>
   <title>sophie dot gallery</title>
   <link rel="stylesheet" href="../../global/style.css">
   <link rel="stylesheet" href="../styles/gallery.css">
+  <script defer src="../../global/transitions.js"></script>
   <script defer data-tag="sunsets" src="https://cloud.umami.is/script.js" data-website-id="f73d01ad-8098-4f00-bd4d-6cbe090d718d"></script>
 </head>
 <body>
-  <div id="gallery" class="gallery-hall viewport-height">
+  <div class="page-transition-overlay" aria-hidden="true"></div>
+  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #e3c4b7; --floor-tint: #7a3e2f44; --frame-tint: #6b2f2055; --wall-text-color: #4b3028;">
     <div class="wall">
-      <div class="intro-text">
-        <h1>sunset mindset</h1>
-        <p>"There’s an obvious poetry in the sunset.
-          <br><br>
-          She returns with a different dress on each night,
-          flirts with the clouds for a dazzling half hour,
-          then slips away as quickly as she came.
-          <br><br>
-          By the time I’m drunk on her presence,
-          she’s already gone — how could I love another muse?
-          <br><br>
-          She could stand me up seven nights in a row, and I’d be back on the eighth."
-          <br><br><span class="enter-text" onClick="scrollIntoGallery()" data-umami-event="scroll-into-gallery">enter →</span>
-        </p>
+      <a class="exit-sign" href="../index.html#sunsets" aria-label="Exit to the main hall">
+        <span class="exit-sign-hanger" aria-hidden="true"></span>
+        <span class="exit-sign-back">
+          <span class="exit-sign-front">
+            <span class="exit-sign-image">
+              <img src="../assets/exit-man.svg" alt="">
+            </span>
+          </span>
+        </span>
+      </a>
+      <div class="gallery-entry">
+        <div class="intro-text">
+          <h1>sunset mindset</h1>
+          <p>"There’s an obvious poetry in the sunset.
+            <br><br>
+            She returns with a different dress on each night,
+            flirts with the clouds for a dazzling half hour,
+            then slips away as quickly as she came.
+            <br><br>
+            By the time I’m drunk on her presence,
+            she’s already gone — how could I love another muse?
+            <br><br>
+            She could stand me up seven nights in a row, and I’d be back on the eighth."
+          </p>
+        </div>
+        <span class="enter-text" onClick="scrollIntoGallery()" data-umami-event="scroll-into-gallery">enter →</span>
       </div>
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-20">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-18">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-13">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-19">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-6">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-5">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-7">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-1">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-2">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-3">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-8">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-10">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-11">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-4">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-15">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-12">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-16">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-17">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-21">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-22">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-23">
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="Sunset 9">
+        <button class="museum-label" type="button"><h2>Sunset 9 <span class="museum-year">(2021)</span></h2><p class="museum-metadata">oil on linen, 24 × 32″</p><p>The horizon blushes at being noticed. Evening arrives slowly enough for the clouds to dress for it.</p></button>
+      </figure>
 
-      <div class="door main-hall"><a href="../index.html"></a></div>
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-20" alt="Sunset 20">
+        <button class="museum-label" type="button"><h2>Sunset 20 <span class="museum-year">(2024)</span></h2><p class="museum-metadata">watercolor and ink, 16 × 24″</p><p>A last seam of daylight holds sky and earth together. Night waits politely on the other side.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-18" alt="Sunset 18">
+        <button class="museum-label" type="button"><h2>Sunset 18 <span class="museum-year">(2023)</span></h2><p class="museum-metadata">mixed media, 36 × 54″</p><p>The sun leaves the door open behind her. Pink light wanders through every room it can find.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-13" alt="Sunset 13">
+        <button class="museum-label" type="button"><h2>Sunset 13 <span class="museum-year">(2021)</span></h2><p class="museum-metadata">gouache on board, 12 × 16″</p><p>An unlucky number receives a lucky sky. For a few minutes, superstition has nothing to say.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-19" alt="Sunset 19">
+        <button class="museum-label" type="button"><h2>Sunset 19 <span class="museum-year">(2021)</span></h2><p class="museum-metadata">oil on canvas, 20 × 28″</p><p>Gold pools at the edge of the world. The day spends everything it has before leaving.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-6" alt="Sunset 6">
+        <button class="museum-label" type="button"><h2>Sunset 6 <span class="museum-year">(2022)</span></h2><p class="museum-metadata">acrylic and oil, 30 × 40″</p><p>Clouds close ranks around a disappearing light. Even so, brightness escapes through every gap.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-5" alt="Sunset 5">
+        <button class="museum-label" type="button"><h2>Sunset 5 <span class="museum-year">(2019)</span></h2><p class="museum-metadata">gouache, 12 × 18″</p><p>The fifth evening keeps its own counsel. Lavender gathers where the day has just been.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-7" alt="Sunset 7">
+        <button class="museum-label" type="button"><h2>Sunset 7 <span class="museum-year">(2023)</span></h2><p class="museum-metadata">oil on wood, 22 × 28″</p><p>The week ends in fire without burning a thing. Tomorrow begins somewhere beyond the frame.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-1" alt="Sunset 1">
+        <button class="museum-label" type="button"><h2>Sunset 1 <span class="museum-year">(2018)</span></h2><p class="museum-metadata">oil on panel, 16 × 20″</p><p>The collection begins with an ending. The first lesson is that departure can be beautiful.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-2" alt="Sunset 2">
+        <button class="museum-label" type="button"><h2>Sunset 2 <span class="museum-year">(2019)</span></h2><p class="museum-metadata">soft pastel, 20 × 24″</p><p>After the first farewell comes another. The sky proves it has infinite ways to say the same impossible thing.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-3" alt="Sunset 3">
+        <button class="museum-label" type="button"><h2>Sunset 3 <span class="museum-year">(2020)</span></h2><p class="museum-metadata">acrylic on linen, 18 × 30″</p><p>Three bands of color negotiate the coming dark. None of them is willing to leave first.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-8" alt="Sunset 8">
+        <button class="museum-label" type="button"><h2>Sunset 8 <span class="museum-year">(2020)</span></h2><p class="museum-metadata">watercolor, 15 × 24″</p><p>Light folds itself into the shape of infinity. For one breath, the evening has no end.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="Sunset 9, reprise">
+        <button class="museum-label" type="button"><h2>Sunset 9, Reprise <span class="museum-year">(2024)</span></h2><p class="museum-metadata">archival pigment print, 36 × 48″</p><p>The same evening returns farther down the hall. Memory changes the frame even when the view is unchanged.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-10" alt="Sunset 10">
+        <button class="museum-label" type="button"><h2>Sunset 10 <span class="museum-year">(2022)</span></h2><p class="museum-metadata">acrylic on canvas, 20 × 30″</p><p>Ten evenings make a small calendar of longing. This one marks the hour when blue gives way.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-11" alt="Sunset 11">
+        <button class="museum-label" type="button"><h2>Sunset 11 <span class="museum-year">(2018)</span></h2><p class="museum-metadata">pastel on paper, 14 × 20″</p><p>Twin ones stand like posts at the edge of dusk. Between them, the last warm color slips through.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-4" alt="Sunset 4">
+        <button class="museum-label" type="button"><h2>Sunset 4 <span class="museum-year">(2021)</span></h2><p class="museum-metadata">oil on canvas, 24 × 36″</p><p>The sky divides itself into quarters and gives every piece away. Darkness inherits the whole estate.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-15" alt="Sunset 15">
+        <button class="museum-label" type="button"><h2>Sunset 15 <span class="museum-year">(2024)</span></h2><p class="museum-metadata">oil on canvas, 32 × 40″</p><p>Half a month of evenings has taught the clouds extravagance. They wear every color at once.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-12" alt="Sunset 12">
+        <button class="museum-label" type="button"><h2>Sunset 12 <span class="museum-year">(2023)</span></h2><p class="museum-metadata">oil and graphite, 18 × 24″</p><p>The clock face fills, but the hour refuses to stay. Amber drains quietly into violet.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-16" alt="Sunset 16">
+        <button class="museum-label" type="button"><h2>Sunset 16 <span class="museum-year">(2022)</span></h2><p class="museum-metadata">acrylic on linen, 24 × 36″</p><p>A thin brightness signs its name across the horizon. The signature fades before anyone can keep it.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-17" alt="Sunset 17">
+        <button class="museum-label" type="button"><h2>Sunset 17 <span class="museum-year">(2020)</span></h2><p class="museum-metadata">oil on panel, 28 × 42″</p><p>The day lingers past its invitation. No one asks it to leave while the windows are still glowing.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-21" alt="Sunset 21">
+        <button class="museum-label" type="button"><h2>Sunset 21 <span class="museum-year">(2022)</span></h2><p class="museum-metadata">acrylic on wood, 30 × 48″</p><p>The longest day learns how to end. Its final light stretches like a hand reluctant to let go.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-22" alt="Sunset 22">
+        <button class="museum-label" type="button"><h2>Sunset 22 <span class="museum-year">(2023)</span></h2><p class="museum-metadata">oil and cold wax, 24 × 30″</p><p>Two pairs of twos make companions of the clouds. They cross the darkening sky together.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-23" alt="Sunset 23">
+        <button class="museum-label" type="button"><h2>Sunset 23 <span class="museum-year">(2024)</span></h2><p class="museum-metadata">oil on linen, 40 × 60″</p><p>The last painting keeps one ember alive. At the end of the hall, evening begins again.</p></button>
+      </figure>
+
+      <div class="door main-hall"><a href="../index.html#sunsets"></a></div>
     </div>
     <div class="floor"></div>
   </div>

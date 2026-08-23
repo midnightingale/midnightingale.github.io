@@ -1,31 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-transition-entering">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport">
+  <meta name="theme-color" content="#000000">
+  <style>html { background: #000; }</style>
   <title>sophie dot gallery</title>
   <link rel="stylesheet" href="../../global/style.css">
   <link rel="stylesheet" href="../styles/gallery.css">
+  <script defer src="../../global/transitions.js"></script>
 </head>
 <body>
-  <div id="gallery" class="gallery-hall viewport-height">
+  <div class="page-transition-overlay" aria-hidden="true"></div>
+  <div id="gallery" class="gallery-hall viewport-height" data-lighting="dark" data-frames="none" style="--wall-color: #17253f; --floor-tint: #6f6762cc; --wall-text-color: #d8dce5; --museum-label-bg: #c9c5bd;">
     <div class="wall">
-      <div class="intro-text">
-        <h1>strangers</h1>
-        <p>what does it mean to know someone?
-          <br><br><span class="enter-text" onClick="scrollIntoGallery()">enter →</span>
-        </p>
+      <a class="exit-sign" href="../index.html#strangers" aria-label="Exit to the main hall">
+        <span class="exit-sign-hanger" aria-hidden="true"></span>
+        <span class="exit-sign-back">
+          <span class="exit-sign-front">
+            <span class="exit-sign-image">
+              <img src="../assets/exit-man.svg" alt="">
+            </span>
+          </span>
+        </span>
+      </a>
+      <div class="gallery-entry wall-text-spotlight">
+        <div class="intro-text">
+          <h1>strangers</h1>
+          <p>what does it mean to know someone?</p>
+        </div>
+        <span class="enter-text" onClick="scrollIntoGallery()">enter →</span>
       </div>
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/mourning-dove">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/strange-land">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/moondance">
-      <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/flame">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/surface-tension">
-      <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/still-here">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/mirror">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/indigo-silence">
-      <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/homogenization">
-      <div class="door main-hall"><a href="../index.html"></a></div>
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/mourning-dove" alt="Mourning Dove">
+        <button class="museum-label" type="button"><h2>Mourning Dove <span class="museum-year">(2022)</span></h2><p class="museum-metadata">oil on linen, 18 × 24″</p><p>A small witness keeps watch after everyone else has gone. It carries grief lightly enough to fly.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/strange-land" alt="Strange Land">
+        <button class="museum-label" type="button"><h2>Strange Land <span class="museum-year">(2021)</span></h2><p class="museum-metadata">acrylic on canvas, 30 × 40″</p><p>The map ends here, but the road keeps going. Familiar light falls across a place that has never learned your name.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/moondance" alt="Moondance">
+        <button class="museum-label" type="button"><h2>Moondance <span class="museum-year">(2023)</span></h2><p class="museum-metadata">oil and wax on panel, 24 × 36″</p><p>Two figures borrow the moon for one song. By morning, only their footprints remember the steps.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/flame" alt="Flame">
+        <button class="museum-label" type="button"><h2>Flame <span class="museum-year">(2020)</span></h2><p class="museum-metadata">gouache on paper, 12 × 16″</p><p>A bright thing insists on being seen. It warms the hands that approach gently and changes everything that comes too close.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/surface-tension" alt="Surface Tension">
+        <button class="museum-label" type="button"><h2>Surface Tension <span class="museum-year">(2024)</span></h2><p class="museum-metadata">acrylic and graphite, 28 × 42″</p><p>The surface holds until it does not. Beneath its calm skin, a whole weather system waits for permission to break.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-strangers/still-here" alt="Still Here">
+        <button class="museum-label" type="button"><h2>Still Here <span class="museum-year">(2019)</span></h2><p class="museum-metadata">oil on canvas, 20 × 30″</p><p>Time moved through the room and took what it could. Something quiet remained, not untouched but undefeated.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/mirror" alt="Mirror">
+        <button class="museum-label" type="button"><h2>Mirror <span class="museum-year">(2023)</span></h2><p class="museum-metadata">charcoal and oil, 32 × 48″</p><p>The glass offers a stranger with perfect timing. Look long enough and the resemblance becomes difficult to deny.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/indigo-silence" alt="Indigo Silence">
+        <button class="museum-label" type="button"><h2>Indigo Silence <span class="museum-year">(2022)</span></h2><p class="museum-metadata">indigo and acrylic, 24 × 48″</p><p>Night gathers in the space between words. The deepest blue is not empty; it is listening.</p></button>
+      </figure>
+
+      <figure class="exhibit">
+        <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/homogenization" alt="Homogenization">
+        <button class="museum-label" type="button"><h2>Homogenization <span class="museum-year">(2024)</span></h2><p class="museum-metadata">mixed media on canvas, 36 × 60″</p><p>Every difference is stirred toward sameness. One stubborn color refuses to disappear completely.</p></button>
+      </figure>
+      <div class="door main-hall"><a href="../index.html#strangers"></a></div>
     </div>
     <div class="floor"></div>
   </div>

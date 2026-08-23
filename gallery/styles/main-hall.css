@@ -1,0 +1,42 @@
+.main-hall-intro
+{
+  margin-right: 8vw;
+}
+
+.gallery-door
+{
+  position: relative;
+  bottom: -13.3vh;
+  display: block;
+  width: 28vh;
+  height: 62vh;
+  margin: 0 9vw;
+  border: 2px solid #ffffff78;
+  border-bottom: 0;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(to bottom, #282828, #665c4d);
+  color: #66594e;
+  text-decoration: none;
+}
+
+.gallery-door span
+{
+  position: absolute;
+  top: -2.4rem;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
+  font-family: "Issey", sans-serif;
+  font-size: 1.2rem;
+}
+
+.gallery-door:hover
+{
+  background: linear-gradient(to bottom, #343434, #786b59);
+}
+
+.gallery-door:focus,
+.gallery-door:focus-visible
+{
+  outline: none;
+}
