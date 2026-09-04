@@ -6,13 +6,15 @@
   <meta name="theme-color" content="#000000">
   <style>html { background: #000; }</style>
   <title>sketches · sophie's gallery</title>
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../../global/style.css">
-  <link rel="stylesheet" href="../styles/gallery.css">
+  <link rel="stylesheet" href="../styles/gallery.css?v=22">
+  <link rel="stylesheet" href="../styles/main-hall.css?v=46">
   <script defer src="../../global/transitions.js"></script>
 </head>
 <body>
   <div class="page-transition-overlay" aria-hidden="true"></div>
-  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #d9d1b8; --floor-tint: #625a3844; --frame-tint: #594b2855; --wall-text-color: #3f3b2c;">
+  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #d9d1b8; --floor-tint-top: #625a3818; --floor-tint-bottom: #625a3850; --frame-tint: #594b2855; --wall-text-color: #3f3b2c;">
     <div class="wall">
       <a class="exit-sign" href="../index.html#sketches" aria-label="Exit to the main hall">
         <span class="exit-sign-hanger" aria-hidden="true"></span>
@@ -34,10 +36,13 @@
         <p>Click any card like this one to bring it closer. Click it again, click outside it, or press escape to return.</p>
       </button>
 
-      <div class="door main-hall"><a href="../index.html#sketches" aria-label="Return to the main hall"></a></div>
+      <a class="gallery-door gallery-return-door" href="../index.html#sketches" style="--door-wall-color: #edebeb;" aria-label="Return to the main hall">
+        <span class="gallery-door-label">main hall</span>
+        <span class="gallery-door-depth" aria-hidden="true"><span class="gallery-door-leaf"></span></span>
+      </a>
     </div>
     <div class="floor"></div>
   </div>
-  <script src="../scripts/gallery.js"></script>
+  <script src="../scripts/gallery.js?v=15"></script>
 </body>
 </html>

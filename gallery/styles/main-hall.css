@@ -1,42 +1,388 @@
+@font-face
+{
+  font-family: "Cinzel Variable";
+  src: url("../assets/fonts/Cinzel-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+/* Layout and projected depth for the gallery's entrance hall. */
 .main-hall-intro
 {
-  margin-right: 8vw;
+  --intro-width: clamp(22rem, 34vw, 34rem);
+
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--intro-width);
+  margin: 0 clamp(3rem, 4vw, 4rem);
+  scroll-margin-inline: calc((100vw - var(--intro-width)) / 2);
+  text-align: center;
+}
+
+.main-hall-intro h1,
+.main-hall-intro blockquote,
+.gallery-door-label
+{
+  font-family: "Cinzel Variable", Cinzel, Georgia, serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(to bottom, #74716e, #817e7b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.25px rgb(78 75 72 / 28%);
+}
+
+.main-hall-intro h1,
+.main-hall-intro blockquote
+{
+  margin: 0;
+}
+
+.main-hall-intro h1
+{
+  white-space: nowrap;
+  font-family: "Cinzel Variable", Cinzel, Georgia, serif;
+  font-weight: 425;
+  font-size: clamp(2.75rem, 4.6vw, 4.5rem);
+  font-kerning: normal;
+  letter-spacing: 0.025em;
+  text-indent: 0.025em;
+}
+
+.main-hall-intro blockquote
+{
+  margin-top: 1.5rem;
+  font-size: clamp(0.9rem, 1.25vw, 1.1rem);
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+}
+
+.main-hall-intro blockquote p,
+.main-hall-intro blockquote cite
+{
+  margin: 0;
+}
+
+.main-hall-intro blockquote cite
+{
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1em;
+  font-style: normal;
+}
+
+.main-hall .wall
+{
+  padding-inline-end: calc((100vw - 28vh) / 2);
+}
+
+.main-hall > .floor
+{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgb(111 83 60 / 2%),
+      rgb(111 83 60 / 36%)
+    ),
+    url(https://ik.imagekit.io/gale/floor);
+}
+
+.main-hall .gallery-door-leaf::after
+{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgb(111 83 60 / 36%),
+      rgb(111 83 60 / 5%)
+    ),
+    url(https://ik.imagekit.io/gale/floor);
+}
+
+.main-hall .gallery-door-depth::after
+{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgb(111 83 60 / 5%),
+      rgb(111 83 60 / 2%)
+    ),
+    url(https://ik.imagekit.io/gale/floor);
 }
 
 .gallery-door
 {
   position: relative;
-  bottom: -13.3vh;
+  align-self: end;
   display: block;
   width: 28vh;
   height: 62vh;
-  margin: 0 9vw;
-  border: 2px solid #ffffff78;
-  border-bottom: 0;
-  border-radius: 2px 2px 0 0;
-  background: linear-gradient(to bottom, #282828, #665c4d);
-  color: #66594e;
+  margin: 0 clamp(2.5rem, 5vw, 5rem);
+  scroll-margin-inline: calc((100vw - 28vh) / 2);
+  border-radius: 14vh 14vh 0 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--wall-color, #edebeb) 62%, black),
+    color-mix(in srgb, var(--wall-color, #edebeb) 82%, black)
+  );
+  color: #968d86;
   text-decoration: none;
+  filter: brightness(1);
+  box-shadow:
+    inset 1px 0 rgb(255 255 255 / 18%),
+    inset -1px 0 rgb(0 0 0 / 8%);
+  view-timeline-name: --door-view;
+  view-timeline-axis: inline;
 }
 
-.gallery-door span
+.gallery-door::before
+{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 3rem;
+}
+
+.gallery-door::after
+{
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 18%) 0%,
+    rgb(255 255 255 / 14%) 78%,
+    transparent 90%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease-out;
+}
+
+.gallery-door:hover::after
+{
+  opacity: 1;
+}
+
+.gallery-door-label
 {
   position: absolute;
   top: -2.4rem;
   left: 50%;
   width: max-content;
   transform: translateX(-50%);
-  font-family: "Issey", sans-serif;
-  font-size: 1.2rem;
+  font-family: "Cinzel Variable", Cinzel, Georgia, serif;
+  font-weight: 425;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-indent: 0.08em;
+  pointer-events: none;
 }
 
-.gallery-door:hover
+.gallery-door-depth
 {
-  background: linear-gradient(to bottom, #343434, #786b59);
+  --door-depth-scale: 0.925;
+  --door-eye-line: 38%;
+  --door-sill-height: 2.9vh;
+  --door-room-floor-height: 9vh;
+
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.gallery-door-depth::after
+{
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--door-sill-height);
+  display: block;
+  clip-path: polygon(3.75% 0, 96.25% 0, 100% 100%, 0 100%);
+}
+
+.gallery-door-depth::before
+{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 38%) 0%,
+    rgb(0 0 0 / 30%) 12%,
+    transparent 30%
+  );
+  pointer-events: none;
+}
+
+.gallery-door-leaf
+{
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 1;
+  border-radius: inherit;
+  transform: scale(var(--door-depth-scale));
+  transform-origin: 50% var(--door-eye-line);
+  background: var(--door-wall-color, var(--wall-color, #edebeb));
+  will-change: transform;
+}
+
+.gallery-door-leaf::after
+{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--door-room-floor-height);
+}
+
+.gallery-door-preview-exhibit
+{
+  position: absolute;
+  z-index: 1;
+  top: 42%;
+  left: 50%;
+  display: flex;
+  align-items: end;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-door-preview
+{
+  display: block;
+  width: auto;
+  max-width: 10rem;
+  height: auto;
+  max-height: 18rem;
+  opacity: 0.7;
+  filter: grayscale(0.2) saturate(0.8) brightness(0.92);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+}
+
+.gallery-door-preview.framed
+{
+  border: 4px solid transparent;
+  border-image: url(https://ik.imagekit.io/gale/gallery-frames/wood-frame.png) 179 164 163 194 stretch stretch;
+}
+
+.gallery-door.is-disabled
+{
+  cursor: help;
+}
+
+.gallery-door-coming-soon
+{
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  display: grid;
+  gap: 0.15em;
+  width: max-content;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #665f75;
+  font-family: "Cinzel Variable", Cinzel, Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+}
+
+.main-hall.is-entering
+{
+  transform-origin: var(--hall-enter-origin-x) var(--hall-enter-origin-y);
+  transform: translate(var(--hall-enter-x), var(--hall-enter-y)) scale(2.4);
+  transition: transform 700ms ease-in, filter 220ms ease-out;
 }
 
 .gallery-door:focus,
 .gallery-door:focus-visible
 {
   outline: none;
+}
+
+@keyframes door-leaf-parallax
+{
+  0%
+  {
+    transform: translateX(-9%) scale(var(--door-depth-scale));
+  }
+
+  50%
+  {
+    transform: translateX(0) scale(var(--door-depth-scale));
+  }
+
+  100%
+  {
+    transform: translateX(9%) scale(var(--door-depth-scale));
+  }
+}
+
+@keyframes door-sill-parallax
+{
+  0%
+  {
+    clip-path: polygon(0 0, 87.25% 0, 100% 100%, 0 100%);
+  }
+
+  29.17%
+  {
+    clip-path: polygon(0 0, 92.5% 0, 100% 100%, 0 100%);
+  }
+
+  50%
+  {
+    clip-path: polygon(3.75% 0, 96.25% 0, 100% 100%, 0 100%);
+  }
+
+  70.83%
+  {
+    clip-path: polygon(7.5% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100%
+  {
+    clip-path: polygon(12.75% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@supports (animation-timeline: view(inline))
+{
+  .gallery-door-leaf
+  {
+    animation-timeline: --door-view;
+    animation-range: entry 0% exit 100%;
+    animation-name: door-leaf-parallax;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+
+  .gallery-door-depth::after
+  {
+    animation-timeline: --door-view;
+    animation-range: entry 0% exit 100%;
+    animation-name: door-sill-parallax;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
 }

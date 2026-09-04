@@ -6,14 +6,16 @@
   <meta name="theme-color" content="#000000">
   <style>html { background: #000; }</style>
   <title>sophie's gallery</title>
+  <script>if (!location.hash) location.replace("#lobby");</script>
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../global/style.css">
-  <link rel="stylesheet" href="styles/gallery.css">
-  <link rel="stylesheet" href="styles/main-hall.css">
+  <link rel="stylesheet" href="styles/gallery.css?v=22">
+  <link rel="stylesheet" href="styles/main-hall.css?v=46">
   <script defer src="../global/transitions.js"></script>
 </head>
 <body>
   <div class="page-transition-overlay" aria-hidden="true"></div>
-  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #edebeb; --wall-text-color: #473c35;">
+  <div id="gallery" class="gallery-hall main-hall viewport-height" style="--wall-color: #f2f1f1; --wall-text-color: #473c35;">
     <div class="wall">
       <a class="exit-sign" href="../index.html" aria-label="Exit the gallery and return home">
         <span class="exit-sign-hanger" aria-hidden="true"></span>
@@ -26,35 +28,68 @@
         </span>
       </a>
 
-      <div class="wall-text main-hall-intro">
-        <h1>sophie's gallery</h1>
-        <p>choose a hall to enter.</p>
+      <div id="sketches" class="gallery-door is-disabled" style="--door-wall-color: #e4e1de;" role="img" aria-label="Sketches, coming soon">
+        <span class="gallery-door-label">sketches</span>
+        <span class="gallery-door-depth" aria-hidden="true">
+          <span class="gallery-door-leaf">
+            <span class="gallery-door-coming-soon"><span>coming</span><span>soon</span></span>
+          </span>
+        </span>
       </div>
 
-      <a id="portraits" class="gallery-door" href="halls/portraits.html">
-        <span>portraits</span>
+      <a id="sunsets" class="gallery-door" href="halls/sunsets.html" style="--door-wall-color: #dfb3b3; --frame-tint: #6b2f2055;">
+        <span class="gallery-door-label">sunsets</span>
+        <span class="gallery-door-depth" aria-hidden="true">
+          <span class="gallery-door-leaf">
+            <span class="gallery-door-preview-exhibit">
+              <img class="gallery-door-preview framed" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="">
+            </span>
+          </span>
+        </span>
       </a>
 
-      <a id="sunsets" class="gallery-door" href="halls/sunsets.html">
-        <span>sunsets</span>
+      <div id="lobby" class="wall-text main-hall-intro">
+        <h1>GALLERIA</h1>
+        <blockquote>
+          <p>ALL ART IS QUITE USELESS.</p>
+          <cite>OSCAR WILDE</cite>
+        </blockquote>
+        <a class="enter-text" href="#portraits">enter →</a>
+      </div>
+
+      <a id="portraits" class="gallery-door" href="halls/portraits.html" style="--door-wall-color: #fbf1e3;">
+        <span class="gallery-door-label">portraits</span>
+        <span class="gallery-door-depth" aria-hidden="true">
+          <span class="gallery-door-leaf">
+            <span class="gallery-door-preview-exhibit">
+              <img class="gallery-door-preview framed" src="https://ik.imagekit.io/gale/gallery-portraits/angelo-may-12.heic?tr=f-auto" alt="">
+            </span>
+          </span>
+        </span>
       </a>
 
-      <a id="strangers" class="gallery-door" href="halls/strangers.html">
-        <span>strangers</span>
-      </a>
-
-      <a id="sketches" class="gallery-door" href="halls/sketches.html">
-        <span>sketches</span>
+      <a id="strangers" class="gallery-door" href="halls/strangers.html" style="--door-wall-color: #17253f;">
+        <span class="gallery-door-label">strangers</span>
+        <span class="gallery-door-depth" aria-hidden="true">
+          <span class="gallery-door-leaf">
+            <span class="gallery-door-preview-exhibit">
+              <img class="gallery-door-preview" src="https://ik.imagekit.io/gale/gallery-strangers/mourning-dove" alt="">
+            </span>
+          </span>
+        </span>
       </a>
 
       <!--
       <a id="daydream" class="gallery-door" href="halls/daydream.html">
-        <span>daydream</span>
+        <span class="gallery-door-label">daydream</span>
+        <span class="gallery-door-depth" aria-hidden="true">
+          <span class="gallery-door-leaf"></span>
+        </span>
       </a>
       -->
     </div>
     <div class="floor"></div>
   </div>
-  <script src="scripts/gallery.js"></script>
+  <script src="scripts/gallery.js?v=15"></script>
 </body>
 </html>

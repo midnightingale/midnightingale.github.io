@@ -6,13 +6,15 @@
   <meta name="theme-color" content="#000000">
   <style>html { background: #000; }</style>
   <title>sophie dot gallery</title>
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../../global/style.css">
-  <link rel="stylesheet" href="../styles/gallery.css">
+  <link rel="stylesheet" href="../styles/gallery.css?v=22">
+  <link rel="stylesheet" href="../styles/main-hall.css?v=46">
   <script defer src="../../global/transitions.js"></script>
 </head>
 <body>
   <div class="page-transition-overlay" aria-hidden="true"></div>
-  <div id="gallery" class="gallery-hall viewport-height" data-lighting="dark" data-frames="none" style="--wall-color: #17253f; --floor-tint: #6f6762cc; --wall-text-color: #d8dce5; --museum-label-bg: #c9c5bd;">
+  <div id="gallery" class="gallery-hall viewport-height" data-lighting="dark" data-frames="none" style="--wall-color: #17253f; --floor-tint-top: #4f494518; --floor-tint-bottom: #4f494560; --wall-text-color: #d8dce5; --museum-label-bg: #c9c5bd;">
     <div class="wall">
       <a class="exit-sign" href="../index.html#strangers" aria-label="Exit to the main hall">
         <span class="exit-sign-hanger" aria-hidden="true"></span>
@@ -29,10 +31,10 @@
           <h1>strangers</h1>
           <p>what does it mean to know someone?</p>
         </div>
-        <span class="enter-text" onClick="scrollIntoGallery()">enter →</span>
+        <a class="enter-text" href="#first-artwork">enter →</a>
       </div>
       <figure class="exhibit">
-        <img class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/mourning-dove" alt="Mourning Dove">
+        <img id="first-artwork" class="artwork framed less-tall" src="https://ik.imagekit.io/gale/gallery-strangers/mourning-dove" alt="Mourning Dove">
         <button class="museum-label" type="button"><h2>Mourning Dove <span class="museum-year">(2022)</span></h2><p class="museum-metadata">oil on linen, 18 × 24″</p><p>A small witness keeps watch after everyone else has gone. It carries grief lightly enough to fly.</p></button>
       </figure>
 
@@ -75,10 +77,13 @@
         <img class="artwork framed taller" src="https://ik.imagekit.io/gale/gallery-strangers/homogenization" alt="Homogenization">
         <button class="museum-label" type="button"><h2>Homogenization <span class="museum-year">(2024)</span></h2><p class="museum-metadata">mixed media on canvas, 36 × 60″</p><p>Every difference is stirred toward sameness. One stubborn color refuses to disappear completely.</p></button>
       </figure>
-      <div class="door main-hall"><a href="../index.html#strangers"></a></div>
+      <a class="gallery-door gallery-return-door" href="../index.html#strangers" style="--door-wall-color: #edebeb;" aria-label="Return to the main hall">
+        <span class="gallery-door-label">main hall</span>
+        <span class="gallery-door-depth" aria-hidden="true"><span class="gallery-door-leaf"></span></span>
+      </a>
     </div>
     <div class="floor"></div>
   </div>
-  <script src="../scripts/gallery.js"></script>
+  <script src="../scripts/gallery.js?v=15"></script>
 </body>
 </html>

@@ -17,9 +17,11 @@
   --artwork-spotlight-color: #ffffffaf;
   --wall-spotlight-center: #ffffff32;
   --wall-spotlight-edge: #ffffff1c;
-
+  --floor-tint-top: rgb(111 83 60 / 8%);
+  --floor-tint-bottom: rgb(111 83 60 / 18%);
   display: grid;
   grid-template-rows: var(--wall-height) var(--floor-height);
+  scroll-behavior: smooth;
 }
 
 .gallery-hall[data-lighting="dark"]
@@ -34,41 +36,40 @@
   display: none;
 }
 
-.floor
+.floor,
+.gallery-door-depth::after,
+.gallery-door-leaf::after
 {
-  background-image:
-    linear-gradient(var(--floor-tint, transparent), var(--floor-tint, transparent)),
-    url(https://ik.imagekit.io/gale/floor);
-  background-blend-mode: multiply;
-  background-position: center;
+  background-color: white;
+  background-image: url(https://ik.imagekit.io/gale/floor);
+  background-position: left bottom;
   background-repeat: repeat-x;
-  background-size: 700px 100%;
-
-  /* floor trim always follows wall colour */
-  border-top: 3px solid color-mix(
-    in srgb,
-    var(--wall-color, #D9C3AA) 65%,
-    #3b2415
-  );
-  box-shadow: 0 -4px color-mix(
-    in srgb,
-    var(--wall-color, #D9C3AA) 82%,
-    white
-  );
-
+  background-size: 700px 12vh;
 }
 
-.floor:after { /* add gradient to floor */
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(to bottom, #ffffff55, #D1A99155);
+.floor
+{
+  /* Tint the hall floor only; doorway planes retain the raw wood. */
+  background-image:
+    linear-gradient(to bottom, var(--floor-tint-top), var(--floor-tint-bottom)),
+    url(https://ik.imagekit.io/gale/floor);
+
 }
 
 .wall
 {
   background: var(--wall-color, linear-gradient(to bottom, #D3CBBE, #F5F2ED));
+  box-shadow:
+    inset 0 -3px color-mix(
+      in srgb,
+      var(--wall-color, #D9C3AA) 82%,
+      #3b2415
+    ),
+    inset 0 -7px color-mix(
+      in srgb,
+      var(--wall-color, #D9C3AA) 90%,
+      white
+    );
   display: grid;
   grid-auto-flow: column;
   place-items: center;
@@ -241,6 +242,11 @@
   transform: translateX(-50%) perspective(120px) rotateX(48deg) scaleY(1.25);
   transform-origin: top center;
   color: var(--wall-text-color, #371a10b5);
+  font-family: Times, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -293,6 +299,33 @@ img.artwork
 .exhibit img.artwork
 {
   margin: 0;
+}
+
+.portrait-study-group
+{
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  margin: 0 max(200px, 15vw);
+}
+
+.portrait-study-group > .exhibit
+{
+  margin: 0;
+}
+
+.portrait-study-group > .exhibit:first-child > .museum-label
+{
+  right: auto;
+  left: -88px;
+}
+
+.portrait-maquette img.artwork
+{
+  height: 26vh;
+  max-height: 26vh;
+  border: 0;
+  -webkit-box-reflect: initial !important;
 }
 
 img.tall
@@ -430,13 +463,14 @@ html.museum-label-open body
   transform: translate(
     var(--museum-label-origin-x, 0),
     var(--museum-label-origin-y, 0)
-  ) scale(1);
+  ) scale(var(--museum-label-closed-scale, 1));
+  line-height: 1.6;
 }
 
 .museum-label-dialog.is-open .museum-label
 {
   transition-timing-function: ease-out;
-  transform: translate(0, 0) scale(var(--museum-label-open-scale, 1));
+  transform: translate(0, 0) scale(1);
 }
 
 .museum-label-dialog.is-positioning .museum-label
@@ -450,49 +484,4 @@ html.museum-label-open body
   {
     transition-duration: 0ms;
   }
-}
-
-.door
-{
-  height: 62vh;
-  width: 28vh;
-  margin: 0 120px;
-  border-radius: 2px;
-  position: relative;
-  bottom: -13.3vh;
-  background: linear-gradient(to bottom, #282828, #665c4d);
-  border-style: solid;
-  border-width: 2px 2px 0;
-  border-color: #211a1688 #211a1688 transparent #ffffff2e;
-}
-
-.door.main-hall:before
-{
-  content: "main hall";
-  /* door text placed above the door */
-  position: absolute;
-  top: -36px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2rem;
-  color: #897b6b;
-  font-family: "Issey", sans-serif;
-}
-
-.main-hall-text
-{
-  font-family: "Issey", sans-serif;
-}
-
-.main-hall-text h1
-{
-  font-weight: 500;
-}
-
-.door a 
-{
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
 }

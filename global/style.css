@@ -15,6 +15,10 @@ html, body {
   padding: 0; 
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 .sophie-font
 {
   font-family: 'sophie', "Times New Roman", serif;
@@ -33,4 +37,26 @@ html, body {
   height: 100%;
   overflow-y: hidden;
   overscroll-behavior-y: none;
+}
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+html.page-transition-entering .page-transition-overlay,
+html.page-transition-out .page-transition-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay {
+    transition: none;
+  }
 }

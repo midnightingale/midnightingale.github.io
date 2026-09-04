@@ -6,14 +6,16 @@
   <meta name="theme-color" content="#000000">
   <style>html { background: #000; }</style>
   <title>sophie dot gallery</title>
+  <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../../global/style.css">
-  <link rel="stylesheet" href="../styles/gallery.css">
+  <link rel="stylesheet" href="../styles/gallery.css?v=22">
+  <link rel="stylesheet" href="../styles/main-hall.css?v=46">
   <script defer src="../../global/transitions.js"></script>
   <script defer data-tag="sunsets" src="https://cloud.umami.is/script.js" data-website-id="f73d01ad-8098-4f00-bd4d-6cbe090d718d"></script>
 </head>
 <body>
   <div class="page-transition-overlay" aria-hidden="true"></div>
-  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #e3c4b7; --floor-tint: #7a3e2f44; --frame-tint: #6b2f2055; --wall-text-color: #4b3028;">
+  <div id="gallery" class="gallery-hall viewport-height" style="--wall-color: #e6bdc2; --floor-tint-top: #7a3e2f18; --floor-tint-bottom: #7a3e2f50; --frame-tint: #6b2f2055; --wall-text-color: #4b3028;">
     <div class="wall">
       <a class="exit-sign" href="../index.html#sunsets" aria-label="Exit to the main hall">
         <span class="exit-sign-hanger" aria-hidden="true"></span>
@@ -40,10 +42,10 @@
             She could stand me up seven nights in a row, and I’d be back on the eighth."
           </p>
         </div>
-        <span class="enter-text" onClick="scrollIntoGallery()" data-umami-event="scroll-into-gallery">enter →</span>
+        <a class="enter-text" href="#first-artwork" data-umami-event="scroll-into-gallery">enter →</a>
       </div>
       <figure class="exhibit">
-        <img class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="Sunset 9">
+        <img id="first-artwork" class="artwork framed tall" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="Sunset 9">
         <button class="museum-label" type="button"><h2>Sunset 9 <span class="museum-year">(2021)</span></h2><p class="museum-metadata">oil on linen, 24 × 32″</p><p>The horizon blushes at being noticed. Evening arrives slowly enough for the clouds to dress for it.</p></button>
       </figure>
 
@@ -157,10 +159,13 @@
         <button class="museum-label" type="button"><h2>Sunset 23 <span class="museum-year">(2024)</span></h2><p class="museum-metadata">oil on linen, 40 × 60″</p><p>The last painting keeps one ember alive. At the end of the hall, evening begins again.</p></button>
       </figure>
 
-      <div class="door main-hall"><a href="../index.html#sunsets"></a></div>
+      <a class="gallery-door gallery-return-door" href="../index.html#sunsets" style="--door-wall-color: #edebeb;" aria-label="Return to the main hall">
+        <span class="gallery-door-label">main hall</span>
+        <span class="gallery-door-depth" aria-hidden="true"><span class="gallery-door-leaf"></span></span>
+      </a>
     </div>
     <div class="floor"></div>
   </div>
-  <script src="../scripts/gallery.js"></script>
+  <script src="../scripts/gallery.js?v=15"></script>
 </body>
 </html>

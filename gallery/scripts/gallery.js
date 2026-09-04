@@ -17,15 +17,25 @@ if (container) {
   });
 }
 
-// sometimes people click the arrow in the intro text
-// this scrolls them into the hall when that happens
-function scrollIntoGallery()
-{
-  const target = document.getElementsByClassName('artwork')[0];
-  if (!target) return;
-  target.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start' // aligns to the top of the view
+// Move toward a selected doorway while the page fades away.
+if (container && container.classList.contains("main-hall")) {
+  container.addEventListener("click", function(e) {
+    const door = e.target.closest(".gallery-door");
+    if (
+      !door ||
+      door.classList.contains("is-disabled") ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) return;
+
+    const bounds = door.getBoundingClientRect();
+    const doorCentreX = bounds.left + bounds.width / 2;
+    const doorCentreY = bounds.top + bounds.height * 0.35;
+
+    container.style.setProperty("--hall-enter-origin-x", `${doorCentreX}px`);
+    container.style.setProperty("--hall-enter-origin-y", `${doorCentreY}px`);
+    container.style.setProperty("--hall-enter-x", `${window.innerWidth / 2 - doorCentreX}px`);
+    container.style.setProperty("--hall-enter-y", `${window.innerHeight * 0.35 - doorCentreY}px`);
+    container.classList.add("is-entering");
   });
 }
 
@@ -38,7 +48,9 @@ let zoomedLabel = null;
 
 function openMuseumLabel(label) {
   const from = label.getBoundingClientRect();
+  const layoutScale = Math.max(1, Math.min(6, (window.innerWidth - 48) / from.width));
   zoomedLabel = label.cloneNode(true);
+  zoomedLabel.style.zoom = layoutScale;
 
   cardDialog.classList.add("is-positioning");
   cardDialog.appendChild(zoomedLabel);
@@ -46,14 +58,15 @@ function openMuseumLabel(label) {
   document.documentElement.classList.add("museum-label-open");
 
   const to = zoomedLabel.getBoundingClientRect();
-  const x = from.left + from.width / 2 - (to.left + to.width / 2);
-  const y = from.top + from.height / 2 - (to.top + to.height / 2);
-  const scale = Math.max(1, Math.min(6, (window.innerWidth - 48) / from.width));
+  // `zoom` scales transform translations too, so convert viewport offsets back
+  // into the enlarged label's local coordinate space.
+  const x = (from.left + from.width / 2 - (to.left + to.width / 2)) / layoutScale;
+  const y = (from.top + from.height / 2 - (to.top + to.height / 2)) / layoutScale;
 
   cardDialog.style.cssText = `
     --museum-label-origin-x: ${x}px;
     --museum-label-origin-y: ${y}px;
-    --museum-label-open-scale: ${scale};
+    --museum-label-closed-scale: ${1 / layoutScale};
   `;
 
   // Commit the starting transform before transitioning the clone to the centre.
