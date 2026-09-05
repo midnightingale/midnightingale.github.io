@@ -44,6 +44,13 @@ const cardDialog = document.createElement("dialog");
 cardDialog.className = "museum-label-dialog";
 document.body.appendChild(cardDialog);
 
+// Return on the page activates the hall's visible Enter anchor.
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter" && event.target === document.body) {
+    document.querySelector("a.enter-text[href^='#']")?.click();
+  }
+});
+
 let zoomedLabel = null;
 
 function openMuseumLabel(label) {
@@ -79,10 +86,15 @@ function closeMuseumLabel() {
   if (!zoomedLabel) return;
 
   const label = zoomedLabel;
+  let closingFinished = false;
+  let closingFallback;
   cardDialog.classList.remove("is-open");
 
   function finishClosing() {
-    cardDialog.close();
+    if (closingFinished) return;
+    closingFinished = true;
+    window.clearTimeout(closingFallback);
+    if (cardDialog.open) cardDialog.close();
     cardDialog.replaceChildren();
     document.documentElement.classList.remove("museum-label-open");
     cardDialog.classList.remove("is-positioning");
@@ -96,6 +108,8 @@ function closeMuseumLabel() {
   }
 
   label.addEventListener("transitionend", finishClosing, { once: true });
+  label.addEventListener("transitioncancel", finishClosing, { once: true });
+  closingFallback = window.setTimeout(finishClosing, 350);
 }
 
 document.addEventListener("click", function(event) {
