@@ -86,8 +86,8 @@
   background-image:
     linear-gradient(
       to bottom,
-      rgb(111 83 60 / 2%),
-      rgb(111 83 60 / 36%)
+      color-mix(in srgb, var(--floor-tint-color) 2%, transparent),
+      color-mix(in srgb, var(--floor-tint-color) 36%, transparent)
     ),
     url(https://ik.imagekit.io/gale/floor);
 }
@@ -97,8 +97,8 @@
   background-image:
     linear-gradient(
       to bottom,
-      rgb(111 83 60 / 36%),
-      rgb(111 83 60 / 5%)
+      color-mix(in srgb, var(--floor-tint-color) 36%, transparent),
+      color-mix(in srgb, var(--floor-tint-color) 5%, transparent)
     ),
     url(https://ik.imagekit.io/gale/floor);
 }
@@ -108,8 +108,8 @@
   background-image:
     linear-gradient(
       to bottom,
-      rgb(111 83 60 / 5%),
-      rgb(111 83 60 / 2%)
+      color-mix(in srgb, var(--floor-tint-color) 5%, transparent),
+      color-mix(in srgb, var(--floor-tint-color) 2%, transparent)
     ),
     url(https://ik.imagekit.io/gale/floor);
 }
@@ -283,21 +283,26 @@
   border-image: url(https://ik.imagekit.io/gale/gallery-frames/wood-frame.png) 179 164 163 194 stretch stretch;
 }
 
-.gallery-door.is-disabled
+.gallery-door.is-coming-soon
 {
   cursor: help;
 }
 
-.gallery-door-coming-soon
+.gallery-door.is-coming-soon:hover::after
 {
+  opacity: 0;
+}
+
+.gallery-door.is-coming-soon .gallery-door-leaf::before
+{
+  content: "coming\A soon";
   position: absolute;
   top: 37%;
   left: 50%;
-  display: grid;
-  gap: 0.15em;
   width: max-content;
   transform: translateX(-50%);
   text-align: center;
+  white-space: pre;
   color: #665f75;
   font-family: "Cinzel Variable", Cinzel, Georgia, serif;
   font-size: 1.05rem;

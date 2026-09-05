@@ -23,7 +23,7 @@ if (container && container.classList.contains("main-hall")) {
     const door = e.target.closest(".gallery-door");
     if (
       !door ||
-      door.classList.contains("is-disabled") ||
+      door.classList.contains("is-coming-soon") ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) return;
 

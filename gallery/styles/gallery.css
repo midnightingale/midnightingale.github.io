@@ -17,8 +17,14 @@
   --artwork-spotlight-color: #ffffffaf;
   --wall-spotlight-center: #ffffff32;
   --wall-spotlight-edge: #ffffff1c;
-  --floor-tint-top: rgb(111 83 60 / 8%);
-  --floor-tint-bottom: rgb(111 83 60 / 18%);
+  --floor-tint-base: #6f533c;
+  --floor-tint-color: color-mix(
+    in srgb,
+    var(--floor-tint-base) 70%,
+    var(--wall-color, #D9C3AA) 30%
+  );
+  --floor-tint-top: color-mix(in srgb, var(--floor-tint-color) 10%, transparent);
+  --floor-tint-bottom: color-mix(in srgb, var(--floor-tint-color) 31%, transparent);
   display: grid;
   grid-template-rows: var(--wall-height) var(--floor-height);
   scroll-behavior: smooth;
@@ -27,6 +33,7 @@
 .gallery-hall[data-lighting="dark"]
 {
   --artwork-spotlight-color: #ffffff45;
+  --floor-tint-bottom: color-mix(in srgb, var(--floor-tint-color) 38%, transparent);
   --wall-spotlight-center: #ffffff20;
   --wall-spotlight-edge: #ffffff10;
 }
@@ -62,24 +69,17 @@
   box-shadow:
     inset 0 -3px color-mix(
       in srgb,
-      var(--wall-color, #D9C3AA) 82%,
-      #3b2415
+      var(--wall-color, #D9C3AA) 92%,
+      black
     ),
     inset 0 -7px color-mix(
       in srgb,
-      var(--wall-color, #D9C3AA) 90%,
-      white
+      var(--wall-color, #D9C3AA) 96%,
+      black
     );
   display: grid;
   grid-auto-flow: column;
   place-items: center;
-}
-
-.portraits-hall .wall
-{
-  box-shadow:
-    inset 0 -3px #eadcca,
-    inset 0 -7px #fff9f1;
 }
 
 .exit-sign
@@ -169,22 +169,13 @@
   margin: 0 15vw;
   color: var(--wall-text-color, #371a10b5);
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .wall-text h1
 {
   font-size: 1.4rem;
   font-weight: 500;
-}
-
-.intro-text
-{
-  font-family: "Issey", sans-serif;
-  font-size: 1.2rem;
-  width: min(60vw, 450px);
-  margin: 0 15vw;
-  color: var(--wall-text-color, #371a10b5);
 }
 
 .gallery-entry
@@ -198,7 +189,6 @@
   margin: 0 15vw;
 }
 
-.gallery-entry .intro-text,
 .gallery-entry .wall-text
 {
   width: 100%;
@@ -224,22 +214,10 @@
   pointer-events: none;
 }
 
-.wall-text-spotlight .intro-text
+.wall-text-spotlight .wall-text
 {
   position: relative;
   z-index: 1;
-}
-
-.intro-text h1
-{
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-.intro-text a /* remove link styling */
-{
-  color: #918986;
-  text-decoration: none;
 }
 
 .enter-text
@@ -249,7 +227,7 @@
   left: 50%;
   transform: translateX(-50%) perspective(120px) rotateX(48deg) scaleY(1.25);
   transform-origin: top center;
-  color: var(--wall-text-color, #371a10b5);
+  color: var(--enter-text-color, var(--wall-text-color, #371a10b5));
   font-family: Times, "Times New Roman", serif;
   font-size: 1rem;
   font-weight: 400;
@@ -266,10 +244,10 @@
 img.artwork
 {
   height: 70vh;
-  max-height: 70vh; 
+  max-height: 70vh;
   margin: 0 max(200px, 15vw);
   -webkit-box-reflect: below 13vh linear-gradient(transparent, #00000012);
-  box-shadow: 
+  box-shadow:
     0 2px 3px 0px #00000045,       /* form shadow */
     -1px 9px 3px 2px #00000030,    /* cast shadow */
     0px -7px 100px 25px var(--artwork-spotlight-color, #ffffffaf); /* spotlight */
@@ -346,7 +324,7 @@ img.tall
 img.less-tall
 {
   height: 50vh;
-  max-height: 50vh; 
+  max-height: 50vh;
   -webkit-box-reflect: below 25vh linear-gradient(transparent, #00000012);
 }
 
@@ -420,6 +398,7 @@ img.framed
 
 .museum-label .museum-year
 {
+  margin-left: 0.25em;
   font-weight: 400;
   font-style: normal;
 }

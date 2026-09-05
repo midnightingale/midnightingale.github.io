@@ -9,31 +9,18 @@
   <script>if (!location.hash) location.replace("#lobby");</script>
   <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../global/style.css">
-  <link rel="stylesheet" href="styles/gallery.css?v=25">
-  <link rel="stylesheet" href="styles/main-hall.css?v=46">
+  <link rel="stylesheet" href="styles/gallery.css?v=32">
+  <link rel="stylesheet" href="styles/main-hall.css?v=49">
   <script defer src="../global/transitions.js"></script>
 </head>
 <body>
   <div class="page-transition-overlay" aria-hidden="true"></div>
   <div id="gallery" class="gallery-hall main-hall viewport-height" style="--wall-color: #f2f1f1; --wall-text-color: #473c35;">
     <div class="wall">
-      <a class="exit-sign" href="../index.html" aria-label="Exit the gallery and return home">
-        <span class="exit-sign-hanger" aria-hidden="true"></span>
-        <span class="exit-sign-back">
-          <span class="exit-sign-front">
-            <span class="exit-sign-image">
-              <img src="assets/exit-man.svg" alt="">
-            </span>
-          </span>
-        </span>
-      </a>
-
-      <div id="sketches" class="gallery-door is-disabled" style="--door-wall-color: #e4e1de;" role="img" aria-label="Sketches, coming soon">
+      <div id="sketches" class="gallery-door is-coming-soon" style="--door-wall-color: #e4e1de;" role="img" aria-label="Sketches, coming soon">
         <span class="gallery-door-label">sketches</span>
         <span class="gallery-door-depth" aria-hidden="true">
-          <span class="gallery-door-leaf">
-            <span class="gallery-door-coming-soon"><span>coming</span><span>soon</span></span>
-          </span>
+          <span class="gallery-door-leaf"></span>
         </span>
       </div>
 
@@ -43,6 +30,17 @@
           <span class="gallery-door-leaf">
             <span class="gallery-door-preview-exhibit">
               <img class="gallery-door-preview framed" src="https://ik.imagekit.io/gale/gallery-sunsets/sunset-9" alt="">
+            </span>
+          </span>
+        </span>
+      </a>
+
+      <a class="exit-sign" href="../index.html" aria-label="Exit the gallery and return home">
+        <span class="exit-sign-hanger" aria-hidden="true"></span>
+        <span class="exit-sign-back">
+          <span class="exit-sign-front">
+            <span class="exit-sign-image">
+              <img src="assets/exit-man.svg" alt="">
             </span>
           </span>
         </span>
@@ -90,6 +88,6 @@
     </div>
     <div class="floor"></div>
   </div>
-  <script src="scripts/gallery.js?v=18"></script>
+  <script src="scripts/gallery.js?v=19"></script>
 </body>
 </html>
