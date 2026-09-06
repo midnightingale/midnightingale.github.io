@@ -17,28 +17,6 @@ if (container) {
   });
 }
 
-// Move toward a selected doorway while the page fades away.
-if (container && container.classList.contains("main-hall")) {
-  container.addEventListener("click", function(e) {
-    const door = e.target.closest(".gallery-door");
-    if (
-      !door ||
-      door.classList.contains("is-coming-soon") ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) return;
-
-    const bounds = door.getBoundingClientRect();
-    const doorCentreX = bounds.left + bounds.width / 2;
-    const doorCentreY = bounds.top + bounds.height * 0.35;
-
-    container.style.setProperty("--hall-enter-origin-x", `${doorCentreX}px`);
-    container.style.setProperty("--hall-enter-origin-y", `${doorCentreY}px`);
-    container.style.setProperty("--hall-enter-x", `${window.innerWidth / 2 - doorCentreX}px`);
-    container.style.setProperty("--hall-enter-y", `${window.innerHeight * 0.35 - doorCentreY}px`);
-    container.classList.add("is-entering");
-  });
-}
-
 // opens museum labels by cloning them (for no layout shift)
 const cardDialog = document.createElement("dialog");
 cardDialog.className = "museum-label-dialog";

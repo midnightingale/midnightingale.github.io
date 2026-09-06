@@ -23,6 +23,11 @@
   text-align: center;
 }
 
+.main-hall-intro > .exit-sign
+{
+  left: -15%;
+}
+
 .main-hall-intro h1,
 .main-hall-intro blockquote,
 .gallery-door-label
@@ -308,13 +313,6 @@
   font-size: 1.05rem;
   line-height: 1.15;
   letter-spacing: 0.08em;
-}
-
-.main-hall.is-entering
-{
-  transform-origin: var(--hall-enter-origin-x) var(--hall-enter-origin-y);
-  transform: translate(var(--hall-enter-x), var(--hall-enter-y)) scale(2.4);
-  transition: transform 700ms ease-in, filter 220ms ease-out;
 }
 
 .gallery-door:focus,
