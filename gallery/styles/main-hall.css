@@ -23,11 +23,6 @@
   text-align: center;
 }
 
-.main-hall-intro > .exit-sign
-{
-  left: -15%;
-}
-
 .main-hall-intro h1,
 .main-hall-intro blockquote,
 .gallery-door-label
@@ -83,7 +78,7 @@
 
 .main-hall .wall
 {
-  padding-inline-end: calc((100vw - 28vh) / 2);
+  padding-inline: calc((100vw - 28vh) / 2);
 }
 
 .main-hall > .floor

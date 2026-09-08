@@ -1,0 +1,101 @@
+@font-face
+{
+  font-family: "Chandler 42";
+  src: url("Chandler42-Regular.woff") format("woff");
+}
+
+:root
+{
+  --now-background-fallback: #a98275;
+  --paper-color: #f4eddb;
+  --ink-color: #3f342d;
+  --paper-margin: clamp(1rem, 4vw, 3rem);
+}
+
+html,
+body
+{
+  overflow-x: hidden;
+  background: var(--now-background-fallback);
+}
+
+body
+{
+  position: relative;
+  min-height: 100%;
+  padding: var(--paper-margin);
+  color: var(--ink-color);
+  font-family: "Chandler 42", "Courier New", monospace;
+}
+
+.now-background
+{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 900ms ease-out;
+}
+
+.now-background.is-loaded
+{
+  opacity: 1;
+}
+
+.now-paper
+{
+  position: relative;
+  z-index: 1;
+  width: min(46rem, 100%);
+  min-height: calc(100dvh - 2 * var(--paper-margin));
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-radius: 4px;
+  background: var(--paper-color);
+  font-size: 1.5rem;
+  clip-path: polygon(
+    0.3% 0.25%, 17% 0%, 36% 0.2%, 58% 0.05%, 79% 0.25%, 99.7% 0.1%,
+    100% 19%, 99.8% 42%, 100% 65%, 99.7% 83%, 99.9% 99.7%,
+    81% 100%, 62% 99.8%, 39% 100%, 18% 99.75%, 0.2% 99.9%,
+    0% 82%, 0.25% 61%, 0.05% 39%, 0.3% 18%
+  );
+  filter:
+    drop-shadow(0 0.3rem 0.28rem rgb(44 28 19 / 58%))
+    drop-shadow(0 0.75rem 1.5rem rgb(44 28 19 / 35%));
+}
+
+.home-link
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+.now-paper article
+{
+  max-width: 36rem;
+  margin: 1.25rem auto 0;
+}
+
+.now-paper article a
+{
+  color: inherit;
+  text-decoration-thickness: 0.04em;
+  text-underline-offset: 0.12em;
+}
+
+.now-paper h1
+{
+  margin: 0 0 1.5rem;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  .now-background
+  {
+    transition: none;
+  }
+}

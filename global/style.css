@@ -1,6 +1,6 @@
 @font-face {
   font-family: "sophie";
-  src: url("Sophie-Regular.otf") format("opentype");
+  src: url("Sophie-Regular-tight-f.otf") format("opentype");
 }
 
 *
@@ -39,24 +39,40 @@ html {
   overscroll-behavior-y: none;
 }
 
-.page-transition-overlay {
+body::after
+{
+  content: "";
   position: fixed;
   inset: 0;
   z-index: 2147483647;
-  background: black;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 700ms ease;
+  background: #000;
+  animation: page-cover-in 450ms ease-out both;
 }
 
-html.page-transition-entering .page-transition-overlay,
-html.page-transition-out .page-transition-overlay {
-  opacity: 1;
-  pointer-events: auto;
+html.page-is-leaving body::after
+{
+  animation: page-cover-out 450ms ease-in-out both;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .page-transition-overlay {
-    transition: none;
+@keyframes page-cover-in
+{
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes page-cover-out
+{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+  body::after,
+  html.page-is-leaving body::after
+  {
+    animation: none;
+    opacity: 0;
   }
 }

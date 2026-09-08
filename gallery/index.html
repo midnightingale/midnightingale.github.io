@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="page-transition-entering">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
-  <style>html { background: #000; }</style>
   <title>sophie's gallery</title>
   <script>if (!location.hash) location.replace("#lobby");</script>
   <link rel="icon" type="image/x-icon" href="https://ik.imagekit.io/gale/love-letter.ico?updatedAt=1727232078691">
   <link rel="stylesheet" href="../global/style.css">
+  <script src="../global/transitions.js" defer></script>
   <link rel="stylesheet" href="styles/gallery.css">
   <link rel="stylesheet" href="styles/main-hall.css">
-  <script defer src="../global/transitions.js"></script>
 </head>
 <body>
-  <div class="page-transition-overlay" aria-hidden="true"></div>
   <div id="gallery" class="gallery-hall main-hall viewport-height" style="--wall-color: #f2f1f1; --wall-text-color: #473c35;">
     <div class="wall">
+      <a class="exit-sign" href="../index.html" aria-label="Exit the gallery and return home">
+        <span class="exit-sign-hanger" aria-hidden="true"></span>
+        <span class="exit-sign-back">
+          <span class="exit-sign-front">
+            <span class="exit-sign-image">
+              <img src="assets/exit-man.svg" alt="">
+            </span>
+          </span>
+        </span>
+      </a>
+
       <div id="sketches" class="gallery-door is-coming-soon" style="--door-wall-color: #e4e1de;" role="img" aria-label="?, coming soon">
         <span class="gallery-door-label">?</span>
         <span class="gallery-door-depth" aria-hidden="true">
@@ -36,16 +45,6 @@
       </a>
 
       <div id="lobby" class="wall-text main-hall-intro">
-        <a class="exit-sign" href="../index.html" aria-label="Exit the gallery and return home">
-          <span class="exit-sign-hanger" aria-hidden="true"></span>
-          <span class="exit-sign-back">
-            <span class="exit-sign-front">
-              <span class="exit-sign-image">
-                <img src="assets/exit-man.svg" alt="">
-              </span>
-            </span>
-          </span>
-        </a>
         <h1>GALLERIA</h1>
         <blockquote>
           <p>ALL ART IS QUITE USELESS.</p>
