@@ -19,6 +19,21 @@ html {
   overscroll-behavior: none;
 }
 
+html.images-loading img:not(.image-loaded)
+{
+  opacity: 0 !important;
+}
+
+html.images-loading img.image-loaded
+{
+  animation: image-load-in var(--image-fade-duration, 550ms) ease-out;
+}
+
+@keyframes image-load-in
+{
+  from { opacity: 0; }
+}
+
 .sophie-font
 {
   font-family: 'sophie', "Times New Roman", serif;
@@ -69,6 +84,11 @@ html.page-is-leaving body::after
 
 @media (prefers-reduced-motion: reduce)
 {
+  html.images-loading img.image-loaded
+  {
+    animation: none;
+  }
+
   body::after,
   html.page-is-leaving body::after
   {

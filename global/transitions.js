@@ -1,4 +1,18 @@
 (() => {
+  document.documentElement.classList.add("images-loading");
+
+  addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("img").forEach((image) => {
+      const reveal = () => image.classList.add("image-loaded");
+
+      if (image.complete) reveal();
+      else {
+        image.addEventListener("load", reveal, { once: true });
+        image.addEventListener("error", reveal, { once: true });
+      }
+    });
+  });
+
   let isLeaving = false;
 
   document.addEventListener("click", (event) => {
